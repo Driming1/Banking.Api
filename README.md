@@ -52,7 +52,3 @@ dotnet test
 - **EF Core InMemory** allows running without a real database. Swap to SQL Server/PostgreSQL by changing the `DbContext` registration.
 - **Validation**: basic validation is performed via DTO annotations and service checks (positive amounts, no overdraft, no duplicate account numbers).
 - **Tests**: include both service-level and endpoint-level coverage for main flows and error cases.
-
----
-
-**Note**: This project is intentionally simple and self-contained for learning/evaluation. In production, you'd add auth, logging/telemetry, error handling middleware, idempotency for transfers, and real database with migrations.
