@@ -18,7 +18,7 @@ dotnet restore
 dotnet run
 ```
 
-The API will start (by default on `http://localhost:5073` / `https://localhost:7249` or similar). Open Swagger UI at `/swagger`.
+The API will start (by default on `http://localhost:5000` / `https://localhost:5001` or similar). Open Swagger UI at `/swagger`.
 
 ## How to Test
 
@@ -45,8 +45,10 @@ dotnet test
 - `POST /api/transfers` — transfer funds  
   body: `{ "fromAccountId": "...", "toAccountId": "...", "amount": 10.00 }`
 
+- `Get /api/accounts/by-number/{accountNumber}` — account by account number  
+
 ### Design Choices
-- **Minimal API** keeps the code compact and easy to read for homework purposes.
+- **Minimal API** keeps the code compact and easy to read for test purposes.
 - **EF Core InMemory** allows running without a real database. Swap to SQL Server/PostgreSQL by changing the `DbContext` registration.
 - **Validation**: basic validation is performed via DTO annotations and service checks (positive amounts, no overdraft, no duplicate account numbers).
 - **Tests**: include both service-level and endpoint-level coverage for main flows and error cases.
